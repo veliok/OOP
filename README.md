@@ -1,1 +1,1 @@
-Object Oriented Progamming in C++ exercises
+Object-Oriented Programming in C++ exercises
