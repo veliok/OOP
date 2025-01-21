@@ -51,8 +51,8 @@ bool ItalianChef::askSecret(string pass, int flour, int water) {
 
 int ItalianChef::makePizza() {
     int portions = min(flour,water) / 5;
-    cout << "ItalianChef " << this->getName() << " with " << this->flour << " flour and " <<
-        this->water << " water can make " << portions << " pizzas" << endl;
+    cout << "ItalianChef " << getName() << " with " << flour << " flour and " <<
+        water << " water can make " << portions << " pizzas" << endl;
     return portions;
 };
 

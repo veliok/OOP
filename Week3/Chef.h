@@ -38,14 +38,14 @@ string Chef::getName(){
 
 int Chef::makeSalad(int ingredients) {
     int portions = (ingredients / 5);
-    cout << "Chef " << this->getName() << " with " << ingredients << " items can make " <<
+    cout << "Chef " << getName() << " with " << ingredients << " items can make " <<
         portions << " portions of salad" << endl;
     return portions;
 }
 
 int Chef::makeSoup(int ingredients) {
     int portions = (ingredients / 3);
-    cout << "Chef " << this->getName() << " with " << ingredients << " items can make " <<
+    cout << "Chef " << getName() << " with " << ingredients << " items can make " <<
         portions << " portions of soup" << endl;
     return portions;
 };

@@ -1,7 +1,5 @@
 #include "ItalianChef.h"
 
-using namespace std;
-
 int main()
 {
     Chef chef("Gordon");
