@@ -1,6 +1,7 @@
 #include "luottotili.h"
 #include <iostream>
 
+
 Luottotili::Luottotili(string name, double limit)
     :Pankkitili(name)
 {

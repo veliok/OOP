@@ -14,39 +14,49 @@ string Asiakas::getNimi() {
 }
 
 void Asiakas::showSaldo() {
-    cout << "Kayttotilin saldo " <<  kayttotili.getBalance() << endl;
+    cout << "Kayttotilin saldo " << kayttotili.getBalance() << endl;
     cout << "Luottotilin saldo " << luottotili.getBalance() << endl;
 }
 
 bool Asiakas::talletus(double maara) {
-    kayttotili.deposit(maara);
-    return true;
+    if(kayttotili.deposit(maara)) {
+        return true;
+    }
+    return false;
 }
 
 bool Asiakas::nosto(double maara) {
-    kayttotili.withdraw(maara);
-    return true;
+    if(kayttotili.withdraw(maara)) {
+       return true;
+    }
+    return false;
 }
 
 bool Asiakas::luotonMaksu(double maara) {
-    luottotili.deposit(maara);
-    return true;
+    if(luottotili.deposit(maara)) {
+        return true;
+    }
+    return false;
 }
 
 bool Asiakas::luotonNosto(double maara) {
-    luottotili.withdraw(maara);
-    return true;
+    if(luottotili.withdraw(maara)) {
+        return true;
+    }
+    return false;
 }
 
 bool Asiakas::tiliSiirto(double maara, Asiakas& asiakas) {
     if(kayttotili.getBalance() > maara) {
         cout << "Pankkitili: " << nimi << " siirtaa " <<
             maara << " kayttajalle " << asiakas.getNimi() << endl;
+
         cout << this->getNimi() << " ";
         this->nosto(maara);
         cout << asiakas.getNimi() << " ";
         asiakas.talletus(maara);
         return true;
     }
+    cout << "Tilisiirto epäonnistui!" << endl;
     return false;
 }

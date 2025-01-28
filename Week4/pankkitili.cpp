@@ -1,6 +1,7 @@
 #include "pankkitili.h"
 #include <iostream>
 
+
 Pankkitili::Pankkitili(string name) {
     omistaja = name;
     cout << "Pankkitili luotu kayttajalle " << omistaja << endl;
@@ -16,6 +17,7 @@ bool Pankkitili::deposit(double amount) {
         cout << "Pankkitili: talletus " << amount << " tehty" << endl;
         return true;
     }
+    cout << "Pankkitili: talletus ei onnistunut!" << endl;
     return false;
 }
 
@@ -25,5 +27,6 @@ bool Pankkitili::withdraw(double amount) {
         cout << "Pankkitili: nosto " << amount << " tehty" << endl;
         return true;
     }
+    cout << "Pankkitili: nosto ei onnistunut!" << endl;
     return false;
 }
