@@ -3,18 +3,17 @@
 
 
 Luottotili::Luottotili(string name, double limit)
-    :Pankkitili(name)
 {
     omistaja = name;
     luottoRaja = limit;
-    this->saldo = limit;
+    saldo = limit;
     cout << "Luottotili luotu kayttajalle " << omistaja <<
         ", luottoraja " << luottoRaja << endl;
 }
 
 bool Luottotili::deposit(double amount) {
-    if(amount > 0 && (this->saldo + amount) < luottoRaja) {
-        this->saldo += amount;
+    if(amount > 0 && (saldo + amount) < luottoRaja) {
+        saldo += amount;
         cout << "Luottotili: talletus " << amount << " tehty" << endl;
         return true;
     }
@@ -23,10 +22,10 @@ bool Luottotili::deposit(double amount) {
 }
 
 bool Luottotili::withdraw(double amount) {
-    if((this->saldo - amount) > 0) {
-        this->saldo -= amount;
+    if((saldo - amount) > 0) {
+        saldo -= amount;
         cout << "Luottotili: nosto " << amount <<
-            " tehty, luottoa jaljella " << this->saldo << endl;
+            " tehty, luottoa jaljella " << saldo << endl;
         return true;
     }
     cout << "Luottotili: nosto ei onnistunut!" << endl;

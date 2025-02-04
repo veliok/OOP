@@ -3,7 +3,7 @@
 
 
 Asiakas::Asiakas(string name, double limit)
-    : luottotili(name, limit)
+    : kayttotili(name), luottotili(name, limit)
 {
     nimi = name;
     cout << "Asiakkuus luotu " << nimi << endl;
@@ -51,8 +51,8 @@ bool Asiakas::tiliSiirto(double maara, Asiakas& asiakas) {
         cout << "Pankkitili: " << nimi << " siirtaa " <<
             maara << " kayttajalle " << asiakas.getNimi() << endl;
 
-        cout << this->getNimi() << " ";
-        this->nosto(maara);
+        cout << getNimi() << " ";
+        nosto(maara);
         cout << asiakas.getNimi() << " ";
         asiakas.talletus(maara);
         return true;

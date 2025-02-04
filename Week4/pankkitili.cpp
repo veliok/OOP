@@ -13,7 +13,7 @@ double Pankkitili::getBalance() {
 
 bool Pankkitili::deposit(double amount) {
     if(amount > 0) {
-        this->saldo += amount;
+        saldo += amount;
         cout << "Pankkitili: talletus " << amount << " tehty" << endl;
         return true;
     }
@@ -22,8 +22,8 @@ bool Pankkitili::deposit(double amount) {
 }
 
 bool Pankkitili::withdraw(double amount) {
-    if(this->saldo > amount) {
-        this->saldo -= amount;
+    if(saldo > amount && amount > 0) {
+        saldo -= amount;
         cout << "Pankkitili: nosto " << amount << " tehty" << endl;
         return true;
     }
