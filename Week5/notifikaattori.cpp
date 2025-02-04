@@ -17,14 +17,21 @@ void Notifikaattori::lisaa(Seuraaja* s) {
 
 void Notifikaattori::poista(Seuraaja* s) {
     cout << "Notifikaattori poistaa seuraajan " << s->getNimi() << endl;
-    seuraajat->next = s->next;
+    Seuraaja* i = seuraajat;
+    if(i == s) seuraajat = s->next;
+    else {
+        while(i != nullptr) {
+            if(i->next == s) i->next = s->next;
+            i = i->next;
+        }
+    }
 }
 
 void Notifikaattori::tulosta() {
     cout << "Notifikaattorin seuraajat:" << endl;
     Seuraaja* s = seuraajat;
     while(s!= nullptr) {
-        s->getNimi();
+        cout << "Seuraaja: " << s->getNimi() << endl;
         s = s->next;
     }
 }

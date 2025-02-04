@@ -9,10 +9,12 @@ int main()
     Seuraaja a("A");
     Seuraaja b("B");
     Seuraaja c("C");
+    Seuraaja d("D");
 
     n.lisaa(&a);
     n.lisaa(&b);
     n.lisaa(&c);
+    n.lisaa(&d);
     n.tulosta();
 
     n.postita("Tama on viesti 1");
